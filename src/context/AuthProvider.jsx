@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { getLocalStorage } from '../utils/localStorage'
+import { getLocalStorage, setLocalStorage } from '../utils/localStorage'
 
 export const AuthContext = createContext()
 
@@ -8,6 +8,7 @@ const AuthProvider = ({children}) => {
     const[userData, setUserData] = useState(null)
 
     useEffect(() => {
+      setLocalStorage()
         const {employees, admin} = getLocalStorage()
         setUserData({employees, admin})
     }, [])
@@ -22,3 +23,6 @@ const AuthProvider = ({children}) => {
 } 
 
 export default AuthProvider
+
+// yeh file local storage se data lekar as a center apne mei store karti hai aur phir bako sab components
+//isse data lete hain

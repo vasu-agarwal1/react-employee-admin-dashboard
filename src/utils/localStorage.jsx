@@ -1,8 +1,16 @@
+
 const employees = [
   {
     id: "EMP001",
+    firstName: "John",
     email: "john.doe@example.com",
     password: "123",
+    taskCount: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Complete frontend UI",
@@ -38,8 +46,15 @@ const employees = [
   },
   {
     id: "EMP002",
+    firstName: "Jane",
     email: "jane.smith@example.com",
     password: "123",
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Create backend API",
@@ -85,8 +100,15 @@ const employees = [
   },
   {
     id: "EMP003",
+    firstName: "Michael",
     email: "michael.brown@example.com",
     password: "123",
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0
+    },
     tasks: [
       {
         title: "Design logo",
@@ -122,8 +144,15 @@ const employees = [
   },
   {
     id: "EMP004",
+    firstName: "Emily",
     email: "emily.jones@example.com",
     password: "123",
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Deploy on Vercel",
@@ -169,8 +198,15 @@ const employees = [
   },
   {
     id: "EMP005",
+    firstName: "David",
     email: "david.wilson@example.com",
     password: "123",
+    taskCount: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0
+    },
     tasks: [
       {
         title: "Optimize SEO",
@@ -205,6 +241,7 @@ const employees = [
     ]
   }
 ];
+
 
 const admin = [
   {
