@@ -10,6 +10,16 @@ const App = () => {
   const[user, setUser] = useState(null)
   const[loggedInUserData, setloggedInUserData] = useState(null)
   const authData = useContext(AuthContext)
+
+  useEffect(()=>{
+    const loggedInUser = localStorage.getItem('loggedInUser')
+    
+    if(loggedInUser){
+      const userData = JSON.parse(loggedInUser)
+      setUser(userData.role)
+      setloggedInUserData(userData.data)
+    }
+  }, [])
   
   // useEffect(() => {
 
@@ -30,7 +40,7 @@ const App = () => {
       if(employee){
       setUser('employee')
       setloggedInUserData(employee)
-      localStorage.setItem('loggedInUser',JSON.stringify({role: 'employee'}) )
+      localStorage.setItem('loggedInUser',JSON.stringify({role: 'employee', data: employee}) )
       }
     }
     else{
@@ -42,8 +52,8 @@ const App = () => {
   return (
     <>
     {!user ? <Login handleLogin={handleLogin} />: ''}
-    {user == 'admin' ? <AdminDashboard /> : (user == 'employee' ? <EmployeeDashboard data={loggedInUserData} /> : null) }
-    </>
+    {user == 'admin' ? <AdminDashboard changeUser={setUser} /> : (user == 'employee' ? <EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null) }
+    </>                                 //due to thiswe can go to login page  when we click on logout button without reloading the page 
   )
 }
 
