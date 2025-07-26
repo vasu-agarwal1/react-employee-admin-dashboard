@@ -25,6 +25,7 @@ const CreateTask = () => {
         console.log(elem)
       }
     })
+    localStorage.setItem('employees')
 
     setTaskDate('')
     setCategory('')
