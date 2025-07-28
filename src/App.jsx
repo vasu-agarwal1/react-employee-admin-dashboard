@@ -53,7 +53,7 @@ const App = () => {
     <>
     {!user ? <Login handleLogin={handleLogin} />: ''}
     {user == 'admin' ? <AdminDashboard changeUser={setUser} /> : (user == 'employee' ? <EmployeeDashboard changeUser={setUser} data={loggedInUserData} /> : null) }
-    </>                                 //due to thiswe can go to login page  when we click on logout button without reloading the page 
+    </>                                 //due to this we can go to login page  when we click on logout button without reloading the page 
   )
 }
 
